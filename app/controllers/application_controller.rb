@@ -1,8 +1,8 @@
 class ApplicationController < ActionController::Base
-  before_filter :add_www_subdomain
+  before_filter :www_redirect
 
   private
-  def add_www_subdomain
+  def www_redirect
     unless /^www/.match(request.host)
       redirect_to("#{request.url}".gsub("#{request.protocol}", "#{request.protocol}www."), status: 301)
     end

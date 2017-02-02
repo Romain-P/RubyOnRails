@@ -1,3 +1,4 @@
 == Ruby on Rails (RoR)
 
-Would like to train myself into this framework.
+Gonna try rails.
+Tests on europe-arena.com
