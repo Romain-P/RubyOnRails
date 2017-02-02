@@ -4,7 +4,7 @@ class ApplicationController < ActionController::Base
   private
   def add_www_subdomain
     unless /^www/.match(request.host)
-      redirect_to("#{request.protocol}www.#{request.url}", status: 301)
+      redirect_to("#{request.url}".gsub("#{request.protocol}", "#{request.protocol}www."), status: 301)
     end
   end
   # Prevent CSRF attacks by raising an exception.
