@@ -1,5 +1,5 @@
 class ApplicationController < ActionController::Base
-  before_filer :add_www_subdomain
+  before_filter :add_www_subdomain
 
   private
   def add_www_subdomain
