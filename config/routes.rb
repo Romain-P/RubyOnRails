@@ -1,6 +1,11 @@
 Rails.application.routes.draw do
   root 'pages#home'
 
+  constraints(subdomain: '') do
+    match "(*x)" => redirect do |params, request|
+      URI.parse(request.url).tap { |x| x.host = "www.#{x.host}" }.to_s
+    end
+  end
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 
